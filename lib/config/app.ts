@@ -7,7 +7,7 @@ import { AlbumRoutes } from "../routes/album_routes"
 
 
 class App {
-   public mongoUrl: string = `mongodb+srv://developer:<passwords>@serverlessinstance0.vtpsf.mongodb.net/Collector?retryWrites=true&w=majority";`
+   public mongoUrl: string = `mongodb+srv://developer:<password>@serverlessinstance0.vtpsf.mongodb.net/Collector?retryWrites=true&w=majority`
    public app: express.Application;
    private test_routes: TestRoutes = new TestRoutes();
    private album_routes: AlbumRoutes = new AlbumRoutes();

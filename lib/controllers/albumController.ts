@@ -3,6 +3,7 @@ import { insufficientParameters, mongoError, successResponse, failureResponse } 
 import { IAlbum } from '../modules/albums/model';
 import AlbumService from '../modules/albums/service';
 import e = require('express');
+import album from 'models/album';
 
 export class AlbumController {
 
@@ -26,11 +27,11 @@ export class AlbumController {
                     modification_note: 'New album created'
                 }]
             };
-            this.album_service.createAlbum(album_params, (err: any, album_data: IAlbum) => {
+            this.album_service.createAlbum(album_params, (err: any, album_params: IAlbum) => {
                 if (err) {
                     mongoError(err, res);
                 } else {
-                    successResponse('create album successfull', album_data, res);
+                    successResponse('create album successfull', album_params, res);
                 }
             });
         } else {
